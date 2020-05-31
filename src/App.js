@@ -27,18 +27,20 @@ class App extends Component {
     }
     render() {
         const {monsters, searchField, text} = this.state;
-        // const results = monsters.filter(monster => 
-        //     monster.name.toLowerCase().includes(searchField.toLowerCase())
-        // )
+        const results = monsters.filter(monster => 
+            monster.name.toLowerCase().includes(searchField.toLowerCase())
+        )
         return (
         <div className="App">
-            <h1>{this.state.text}</h1>
+            <h1>
+                Monster Rolodex
+            </h1>
             <SearchBox 
             placeholder='Search Bots'
             handleChange= {this.handleChange}
             />
             <CardList 
-            monsters={monsters}>
+            monsters={results}>
             </CardList>
     </div>
     );
